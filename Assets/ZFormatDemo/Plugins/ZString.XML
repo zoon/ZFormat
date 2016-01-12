@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ZString</name>
+    </assembly>
+    <members>
+        <member name="T:ZFormat.ZString">
+            <summary>
+            Mutable, growable string with API that is loosely based on <see cref="T:System.Text.StringBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:ZFormat.ZString.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the ZString class using the specified optional capacity.
+            </summary>
+            <param name="maxCapacity">The suggested starting size of this instance.</param>
+        </member>
+        <member name="P:ZFormat.ZString.Capacity">
+            <summary>
+            Gets or sets the maximum number of characters that can be contained 
+            in the memory allocated by the current instance.
+            Capacity will be set to the next power of 2 of the value.
+            </summary>
+        </member>
+        <member name="P:ZFormat.ZString.Length">
+            <summary>
+            Gets or sets the length of the current ZString object.
+            </summary>
+        </member>
+        <member name="P:ZFormat.ZString.Item(System.Int32)">
+            <summary>
+            Gets or sets the character at the specified character position in this instance.
+            </summary>
+            <exception cref="T:System.IndexOutOfRangeException">
+            index is outside the bounds (length) of this instance while setting a character.</exception>
+        </member>
+        <member name="M:ZFormat.ZString.Append(System.Char)">
+            <summary>
+            Appends the string representation of a specified <see cref="T:System.Char"/> object to this instance.
+            </summary>
+            <returns>this</returns>
+        </member>
+        <member name="M:ZFormat.ZString.Append(System.Object[])">
+            <summary>
+            Appends array of fragments to this instance that are one of the: 
+            string, char[], List&lt;Char&gt; or ZString; ignore all other objects.
+            </summary>
+            <returns>this</returns>
+        </member>
+        <member name="M:ZFormat.ZString.Append(System.String)">
+            <summary>
+            Appends a copy of the specified string to this instance.
+            </summary>
+            <returns>this</returns>
+        </member>
+        <member name="M:ZFormat.ZString.Append(ZFormat.ZString)">
+            <summary>
+            Appends a copy of the specified ZString to this instance.
+            </summary>
+            <returns>this</returns>
+        </member>
+        <member name="M:ZFormat.ZString.Append(System.Collections.Generic.List{System.Char})">
+            <summary>
+            Appends the string representation of the Unicode characters in a specified list to this instance.
+            </summary>
+            <returns>this</returns>
+        </member>
+        <member name="M:ZFormat.ZString.Append(System.Char[])">
+            <summary>
+            Appends the string representation of the Unicode characters in a specified array to this instance.
+            </summary>
+            <returns>this</returns>
+        </member>
+        <member name="M:ZFormat.ZString.Append(System.Char[],System.Int32)">
+            <summary>
+            Appends the string representation of a specified array of Unicode characters to this instance.
+            </summary>
+            <returns>this</returns>
+            <exception cref="T:System.ArgumentNullException">'chars' is null</exception>
+            <exception cref="T:System.ArgumentException">
+            'count' is less then 0 or 'count' is greater than the length of 'chars' </exception>
+        </member>
+        <member name="M:ZFormat.ZString.Clear">
+            <summary>
+            Alias for 'Length = 0'
+            </summary>
+        </member>
+        <member name="M:ZFormat.ZString.LengthOfFrags(System.Object[])">
+            <summary>
+            Calculate sum of lengths of all fragments.
+            </summary>
+        </member>
+        <member name="M:ZFormat.ZString.Reset(System.String)">
+            <summary>
+            Clears and then appends a copy of the specified string to this instance
+            </summary>
+            <returns>this</returns>
+        </member>
+        <member name="M:ZFormat.ZString.Reset(System.Object[])">
+            <summary>
+            Clears and then appends array of fragments to this instance that are one of the: 
+            string, char[], List&lt;Char&gt; or ZString; ignore all other objects.</summary>
+            <returns>this</returns>
+        </member>
+        <member name="M:ZFormat.ZString.Reset(System.Char[],System.Int32)">
+            <summary>
+            Clears and then appends the string representation of a specified array of Unicode characters to this instance.
+            </summary>
+            <returns>this</returns>
+            <exception cref="T:System.ArgumentNullException">'chars' is null</exception>
+            <exception cref="T:System.ArgumentException">
+            'count'  is less then 0 or 'count' is greater than the length of 'chars'
+            </exception>
+        </member>
+        <member name="M:ZFormat.ZString.ToString">
+            <summary>
+            NOTE: method do not allocate new string but returns reference to the internal string buffer.
+            </summary>
+        </member>
+    </members>
+</doc>
