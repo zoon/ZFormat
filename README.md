@@ -133,11 +133,11 @@ Converts the numeric value into the reference to the character buffer and
 characters count using the specified format. Formatting methods are all of
 the form:
 
-  ```csharp
+```csharp
 void NumberToChars(XXX n);
 void NumberToChars(string format, XXX n);
 void NumberToChars(string format, XXX n, ZNumberFormatInfo info)
-  ```
+```
 
   Where `XXX` is the name of the particular numeric class: `Int32`, `UInt32`,
   `Int64`, `UInt64`, `Single`, `Double`, and `Decimal`.
